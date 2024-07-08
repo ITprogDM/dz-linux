@@ -1,0 +1,3 @@
+SEARCH - sudo apt search jquery
+
+INSTALL - sudo apt install -y libjs-jquery
