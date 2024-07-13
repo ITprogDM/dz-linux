@@ -1,0 +1,5 @@
+Starting deletion process:
+1. Ensure the partition is not in use:
+   sudo umount /dev/vdb1
+2. Use parted to delete the partition:
+   sudo parted /dev/vdb rm 1

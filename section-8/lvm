@@ -1,0 +1,11 @@
+sudo mkfs.ext4 /dev/volume1/storage
+sudo mkdir -p /storage
+sudo mount /dev/volume1/storage /storage
+echo "/dev/volume1/storage /storage ext4 defaults 0 0" | sudo tee -a /etc/fstab
+sudo umount /storage
+sudo mount -a
+
+sudo apt-get install lvm2 -y
+sudo pvcreate /dev/vdb
+sudo vgcreate volume1 /dev/vdb
+sudo lvcreate -n storage -l 100%FREE volume1
